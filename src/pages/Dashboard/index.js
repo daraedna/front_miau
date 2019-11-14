@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard(){
@@ -31,6 +32,10 @@ export default function Dashboard(){
                 </li>
                 ))}
             </ul>
+
+            <Link to="/AddNecessities"> 
+                    Cadastrar nova Necessidade
+            </Link>
         </>
     )
 } 
