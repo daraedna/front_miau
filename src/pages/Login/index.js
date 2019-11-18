@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 
 export default function Login({history}){
@@ -43,6 +44,9 @@ export default function Login({history}){
             /><br/>
 
             <button className="btn" type="submit"> Entrar </button>
+            <Link to="/register"> 
+                    Cadastrar
+            </Link>
 
             </form>
         </>
