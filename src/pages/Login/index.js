@@ -14,9 +14,9 @@ export default function Login({history}){
       const  { data }  =  await api.post('/authenticateInst', { emailInst, passwordInst });
       
      const { inst } = data;
-     const { id } = inst;
+     const { _id } = inst;
   
-     localStorage.setItem('inst', id);
+     localStorage.setItem('inst', _id);
 
      history.push('/dashboard');
     }
@@ -32,7 +32,7 @@ export default function Login({history}){
                 placeholder="Digite seu E-mail"
                 value={emailInst}
                 onChange={event => setEmailInst(event.target.value)}
-            /> <br/>
+            /> 
 
             <label htmlFor="password"> SENHA * </label>
             <input 
@@ -41,10 +41,10 @@ export default function Login({history}){
                 placeholder="Digite sua senha"
                 value={passwordInst}
                 onChange={event => setPasswordInst(event.target.value)}
-            /><br/>
+            />
 
             <button className="btn" type="submit"> Entrar </button>
-            <Link to="/register"> 
+            <Link className="btn-simple" to="/register"> 
                     Cadastrar
             </Link>
 
