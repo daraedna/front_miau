@@ -23,7 +23,9 @@ export default function Login({history}){
 
     return (
         <>
+           
             <form onSubmit={handleSubmit}>
+            <p>  Insira as credenciais da sua instituição </p>
 
             <label htmlFor="email"> E-MAIL * </label>
             <input 
@@ -44,7 +46,7 @@ export default function Login({history}){
             />
 
             <button className="btn" type="submit"> Entrar </button>
-            <Link className="btn-simple" to="/register"> 
+            <Link to="/register"> 
                     Cadastrar
             </Link>
 

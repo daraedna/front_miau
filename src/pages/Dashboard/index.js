@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from 'react';
 import api from '../../services/api';
+import  './styles.css';
 import { Link } from 'react-router-dom';
 
-
-export default function Dashboard(){
+export default function Dashboard({history}){
     const [necessities, setNecessities] = useState([]);
 
     useEffect(() => {
@@ -20,22 +20,36 @@ export default function Dashboard(){
         loadNecessities();
     }, []); 
 
+    async function addNecessities(event){
+        event.preventDefault();
+
+        history.push('/AddNecessities');
+    }
+
     
     
     return (
         <>
-            <ul className="necessities-list" >
-                {necessities.map(necessities => (
-                <li key={necessities._id}>
-                    <strong> {necessities.inst}</strong>
-                    <span> {necessities.name}</span>
-                </li>
-                ))}
-            </ul>
+          
+            <form>
+            <p> Necessidades Cadastradas</p>
+                <ul className="necessities-list" >
+                    {necessities.map(necessities => (
+                    <li key={necessities._id}>
+                        <strong> {necessities.name}</strong>
+                        <span> {necessities.qtd}</span>
+                    </li>
+                    ))}
+                </ul> 
 
-            <Link to="/AddNecessities"> 
-                    Cadastrar nova Necessidade
-            </Link>
+                <button className="btn" onClick={addNecessities}> Adicionar Necessidade </button>
+
+                <Link to="/"> 
+                        Sair
+                </Link>
+            
+            </form>
+            
         </>
     )
 } 

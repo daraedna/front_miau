@@ -14,7 +14,7 @@ function App() {
         
         <img src={logo} alt="miAu"/>
         <div className="content"> 
-          <p> Insira as credenciais da sua instituição</p>
+         
 
         <Routes  />
 

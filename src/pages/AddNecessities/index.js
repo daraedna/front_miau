@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 
 export default function AddNecessities({ history }){
@@ -23,8 +24,10 @@ export default function AddNecessities({ history }){
 
 
     return (
-
+<>
+       
         <form onSubmit={handleSubmit}>
+        <p> Cadastre uma necessidade </p>
             <label htmlFor> Necessidade: </label>
             <input
                 id= "name"
@@ -50,7 +53,13 @@ export default function AddNecessities({ history }){
             /><br/>
             
             <button className="btn" type="submit"> Cadastrar </button>
+
+            <Link to="/Dashboard"> 
+                    Cancelar
+            </Link>
             
+ 
         </form>
+     </>   
     )
 }

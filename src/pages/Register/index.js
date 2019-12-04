@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 export default function Register({ history }){
 
@@ -21,8 +22,9 @@ export default function Register({ history }){
 
 
     return (
-
+       
         <form onSubmit={handleSubmit}>
+         <p> Cadastre sua Instituição</p>
             <label htmlFor> Nome: </label>
             <input
                 id= "nameInst"
@@ -82,6 +84,9 @@ export default function Register({ history }){
             /><br/>
             
             <button className="btn" type="submit"> Cadastrar </button>
+            <Link to="/"> 
+                    Cancelar
+            </Link>
             
         </form>
     )
