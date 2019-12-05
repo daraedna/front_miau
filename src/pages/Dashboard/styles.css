@@ -18,3 +18,24 @@ ul.necessities-list li {
     background-size: cover;
     border-radius: 4px;
  }
+
+ ul.necessities-list li strong {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #444;
+ }
+
+ ul.necessities-list li span {
+    font-size: 15px;
+    color: #999;
+ }
+
+ ul.necessities-list li header {
+   width: 100%;
+   height: 120px;
+   background-size: cover;
+   border-radius: 4px;
+}
+
+
+

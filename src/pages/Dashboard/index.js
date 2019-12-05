@@ -13,6 +13,8 @@ export default function Dashboard({history}){
                headers: { inst_id }
            });
 
+           console.log(data)
+
            const { necessities } = data;
             setNecessities(necessities);
         }
@@ -36,8 +38,9 @@ export default function Dashboard({history}){
                 <ul className="necessities-list" >
                     {necessities.map(necessities => (
                     <li key={necessities._id}>
+                        <header style={{backgroundImage:`url(${necessities.img_nec_url})` }}/> 
                         <strong> {necessities.name}</strong>
-                        <span> {necessities.qtd}</span>
+                        <span> {necessities.qtd ? `Quantidade: ${necessities.qtd}` : 'Quantidade Indefinida'}</span>
                     </li>
                     ))}
                 </ul> 

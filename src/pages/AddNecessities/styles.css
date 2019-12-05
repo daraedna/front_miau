@@ -1,0 +1,23 @@
+label#img_nec {
+    margin-top: 20px;
+    border: 1px dashed #ddd;
+    background-size: cover;
+    cursor: pointer;
+    height: 160px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label#img_nec input {
+    display: none;
+}
+
+label#img_nec.has-img_nec {
+    border: 0;
+}
+
+label#img_nec.has-img_nec img {
+  display: none;
+}
