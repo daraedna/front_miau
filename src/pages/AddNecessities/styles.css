@@ -21,3 +21,17 @@ label#img_nec.has-img_nec {
 label#img_nec.has-img_nec img {
   display: none;
 }
+
+select#uni_medida {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    height: 45px;
+    padding: 0 15px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+img#icon-camera{
+    width: 30px;
+    height: 30px;
+}

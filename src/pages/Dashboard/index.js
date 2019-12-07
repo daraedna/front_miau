@@ -40,7 +40,7 @@ export default function Dashboard({history}){
                     <li key={necessities._id}>
                         <header style={{backgroundImage:`url(${necessities.img_nec_url})` }}/> 
                         <strong> {necessities.name}</strong>
-                        <span> {necessities.qtd ? `Quantidade: ${necessities.qtd}` : 'Quantidade Indefinida'}</span>
+                        <span> {necessities.qtd ? `Quantidade: ${necessities.qtd}${' '}${necessities.uni_medida}` : 'Quantidade Indefinida'}</span>
                     </li>
                     ))}
                 </ul> 
