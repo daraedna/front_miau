@@ -37,5 +37,19 @@ ul.necessities-list li {
    border-radius: 4px;
 }
 
+button#delete {
+   font-size: 15px;
+   color: #f32424;
+   background-color: #fff;
+   border: 0;
+   border-radius: 2px;
+   width: 60px;
+   font-weight: bold;
+   text-align: initial;
+   text-decoration: none;
+   cursor: pointer;
+   background-image: lixeira ;
+}
+
 
 

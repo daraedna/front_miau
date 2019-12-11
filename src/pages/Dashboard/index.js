@@ -3,6 +3,10 @@ import api from '../../services/api';
 import  './styles.css';
 import { Link } from 'react-router-dom';
 
+import Popup from 'reactjs-popup';
+
+import lixeira from '../../assets/lixeira.jpg'
+
 export default function Dashboard({history}){
     const [necessities, setNecessities] = useState([]);
 
@@ -13,20 +17,37 @@ export default function Dashboard({history}){
                headers: { inst_id }
            });
 
-           console.log(data)
-
            const { necessities } = data;
-            setNecessities(necessities);
+
+           setNecessities(necessities);
         }
       
         loadNecessities();
     }, []); 
+
+    const deleteItem = async (_id) => {
+        
+        const payload = { _id }
+        const inst_id = localStorage.getItem('inst');
+
+        const { data } = await api.delete('/necessities', { 
+            headers: { inst_id },
+            data: payload 
+        });
+
+        const { necessities } = data;
+
+        setNecessities(necessities);
+    }
 
     async function addNecessities(event){
         event.preventDefault();
 
         history.push('/AddNecessities');
     }
+
+
+
 
     
     
@@ -41,6 +62,8 @@ export default function Dashboard({history}){
                         <header style={{backgroundImage:`url(${necessities.img_nec_url})` }}/> 
                         <strong> {necessities.name}</strong>
                         <span> {necessities.qtd ? `Quantidade: ${necessities.qtd}${' '}${necessities.uni_medida}` : 'Quantidade Indefinida'}</span>
+                        <button id="delete" type='button' onClick={() => deleteItem(necessities._id)}>DELETAR</button>
+                        
                     </li>
                     ))}
                 </ul> 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 
 export default function Register({ history }){
 
@@ -46,14 +47,15 @@ export default function Register({ history }){
             <input
                 id= "passwordInst"
                 type="password"
-                placeholder="Insira uma senha"
+                placeholder="*******"
                 value={passwordInst}
                 onChange={event => setPasswordInst(event.target.value)}
             /><br/>
 
             <label htmlFor> Telefone: </label>
-            <input
+            <InputMask
                 id= "phone"
+                mask="(99) 99999-9999"
                 placeholder="Insira um contato"
                 value={phoneInst}
                 onChange={event => setPhoneInst(event.target.value)}

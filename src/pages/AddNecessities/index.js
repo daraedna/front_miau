@@ -51,7 +51,7 @@ export default function AddNecessities({ history }){
                 className={img_nec ?'has-img_nec' : ''}
             >
                 <input type ="file" onChange={event => setImg_nec(event.target.files[0])} />
-                <img id="icon-camera"src={camera} alt="Select img" />
+                <img id="icon-camera" src={camera} alt="Select img" />
             </label>
 
 
