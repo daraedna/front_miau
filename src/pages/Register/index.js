@@ -18,7 +18,7 @@ export default function Register({ history }){
         
         await api.post('/registerInst', { nameInst, emailInst, passwordInst, phoneInst, descritionInst, cityInst, stateInst })
          
-        history.push('/dashboard');
+        history.push('/login');
     }
 
 

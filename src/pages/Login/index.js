@@ -8,13 +8,15 @@ export default function Login({history}){
     const [emailInst, setEmailInst] = useState('');
     const [passwordInst, setPasswordInst] = useState('');
   
-    async function handleSubmit(event){
+    async  function handleSubmit(event){
       event.preventDefault();
-     
+     console.log('ENTROU')
       const  { data }  =  await api.post('/authenticateInst', { emailInst, passwordInst });
       
      const { inst } = data;
      const { _id } = inst;
+
+     console.log(inst);
   
      localStorage.setItem('inst', _id);
 
